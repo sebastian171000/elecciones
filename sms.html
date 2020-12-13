@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elecciones</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="overflow-hidden">
+    <div class="padre-identificarse">
+        <div class="imagen">
+            <img src="img/Screenshot at Dec 11 22-07-37.png" alt="">
+        </div>
+        <div class="contenido-identificarse ">
+            <div class="logo">
+                <img src="img/Screenshot at Dec 11 22-38-57.png" alt="">
+            </div>
+            <div class="formulario-identificarse">
+                <h2>Para participar de estas elecciones,
+                    ingrese el código de 4 dígitos.</h2>
+                <form action="votar.html">
+                    <div id="form">
+                        <input class="sms1" type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}">
+                        <input class="sms2" type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}">
+                        <input class="sms3" type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}">
+                        <input class="sms4" type="text" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}">
+                    </div>
+                    
+                    <small>Si no ha recibido el SMS con el código presione<br> <a href="">aquí para enviar uno nuevo</a></small>
+                    
+                    <input class="btn" type="submit" value="INGRESAR">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script>
+    var body = $('body');
+    $('form .btn').prop('disabled', true);
+function goToNextInput(e) {
+    
+  var key = e.which,
+    t = $(e.target),
+    sib = t.next('input');
+  if (key != 9 && (key < 48 || key > 57)) {
+    e.preventDefault();
+    return false;
+  }
+
+  if (key === 9) {
+    return true;
+  }
+
+  if (!sib || !sib.length) {
+    sib = body.find('input').eq(0);
+  }
+  sib.select().focus();
+}
+
+function onKeyDown(e) {
+  var key = e.which;
+
+  if (key === 9 || (key >= 48 && key <= 57)) {
+    return true;
+  }
+
+  e.preventDefault();
+  return false;
+}
+
+function onFocus(e) {
+  $(e.target).select();
+}
+
+body.on('keyup', 'input', goToNextInput);
+body.on('keydown', 'input', onKeyDown);
+body.on('click', 'input', onFocus);
+$('#form input').on('change', () => {
+    let sms1 = $('.sms1').val();
+    let sms2 = $('.sms2').val();
+    let sms3 = $('.sms3').val();
+    let sms4 = $('.sms4').val();
+    if(sms1 != '' && sms2 != '' && sms3 != '' && sms4 != ''){
+        $('form .btn').css({ "backgroundColor": "#0BC466"});
+        $('form .btn').prop('disabled', false);
+    }
+});
+
+</script>
+</html>

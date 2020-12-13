@@ -13,8 +13,8 @@ body {
     font-size: 1.6rem;
     line-height: 2;
 }
-@media (min-width: 768px) {
-    body{
+@media (min-width: 1024px) {
+    .overflow-hidden{
         overflow: hidden;
     }
  }
@@ -26,31 +26,64 @@ img {
     width: 95%;
     margin: 0 auto;
 }
-.padre-identificarse{
-    display: flex;
-    align-items: center;
-}
+
+@media (min-width: 1025px) {
+    .padre-identificarse{
+        display: flex;
+        align-items: center;
+    }
+ }
 .padre-identificarse .imagen img{
-    height: 100vh;
+    display: none;
 }
 .padre-identificarse .logo img{
     width: 11rem;
 }
+@media (min-width: 1025px) {
+    .padre-identificarse .imagen img{
+        height: 100vh;
+        display: block;
+    }
+ }
 .contenido-identificarse{
+    max-width: 90%;
     margin: 0 auto;
-    margin-bottom: 4rem;
-    max-width: 40%;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
 }
-.logo{
+@media (min-width: 1025px) {
+    .contenido-identificarse{
+        margin-bottom: 4rem;
+        height: unset;
+        display: unset;
+        max-width: 40%;
+    }
+ }
+ .logo{
     position: absolute;
     top: 4rem;
     right: 4rem;
 }
+@media (min-width: 1025px) {
+    .logo{
+        position: absolute;
+        top: 4rem;
+        right: 4rem;
+    }
+ }
 small{
     display: block;
     margin: 3rem 0;
     color: #7D7D81;
+    font-size: 3vw;
 }
+@media (min-width: 1025px) {
+    small{
+        font-size: unset;
+    }
+ }
 .btn{
     background-color: #BABABC;
     color: white;
@@ -62,10 +95,17 @@ small{
     cursor: pointer;
 }
 h2{
-    font-size: 3.5rem;
-    line-height: 45px;
+
     color: #18181E;
+    line-height: 8vw;
+    font-size: 6vw;
 }
+@media (min-width: 1025px) {
+    h2{
+        font-size: 3.5rem;
+        line-height: 45px;
+    }
+ }
 .input.dni input{
     width: 100%;
     padding: 2.5rem 2rem;
@@ -74,6 +114,8 @@ h2{
     font-weight: 900;
     font-size: 22px;
     letter-spacing: 2px;
+    z-index: 10000;
+    background: transparent;
 }
 
 .input.dni input::placeholder{
@@ -96,5 +138,364 @@ h2{
     left: 24px;
     font-size: 12px;
     color: #7D7D81;
+    font-size: 18px;
+    user-select: none; 
+    z-index: -1;
+    transition: all .1s;
     
 }
+small a{
+    color: #0BC466;
+}
+@media (max-width: 1024px) {
+    .formulario-identificarse{
+        margin: 0 auto;
+        text-align: center;
+    }
+ }
+
+ #form input {
+    margin: 0 5px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 35px;
+    border: solid 1px #E7E7E8;
+    outline: none;
+    width: 12%;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border-radius: 8px;
+}
+/*home votacion*/
+.votar-body{
+    background-color: #F8F8F8;
+}
+.home-votacion .logo-votacion{
+    width: 11rem;
+}
+.votar-body header{
+    background-color: white;
+}
+.home-votacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.votar-body h1{
+    text-align: center;
+    margin: 4rem 0;
+    line-height: 37px;
+}
+.contenedor-cards{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
+    margin: 0 auto;
+}
+@media (max-width: 980px) {
+    .contenedor-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contenedor-cards .card{
+        margin-bottom: 4rem;
+    }
+ }
+ @media (max-width: 539px) {
+    .contenedor-cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+.card{
+    border-radius: 12px;
+    margin: 0 auto;
+    border: 3px solid #F3F3F3;
+    width: 19%;
+    min-width: 22rem;
+    background-color: white;
+}
+.person{
+    border-radius: 12px 12px 0px 0px;
+    height: 38vh;
+    min-height: 20rem;
+    max-height: 32rem;
+    box-shadow: inset 0px -44px 50px -3px white;
+    background-position: -18rem -6rem;
+    background-repeat: no-repeat;
+    background-size: 56rem;
+}
+.card_1 .person{
+    background-image: url(../img/IMAGENPRIMERJOVEN.png);
+}
+.card_2 .person{
+    background-image: url(../img/SEGUNDAJOVEN.png);
+    background-position: -13rem 0rem;
+    background-size: 50rem;
+}
+.card_3 .person{
+    background-image: url(../img/TERCERJOVEN.png);
+    background-position: -7rem 0rem;
+    background-size: 37rem;
+}
+.card_4 .person{
+    background-image: url(../img/CUARTAJOVEN.png);
+    background-position: -9rem -6rem;
+    background-size: 37rem;
+}
+.card button{
+    background-color: white;
+    border: 1px solid #7D7D81;
+    padding: 1.5rem 2.2rem;
+    border-radius: 8px;
+    color: #7D7D81;
+    font-weight: 800;
+}
+.name{
+    padding: 2rem .5rem;
+}
+.name p:first-of-type{
+    margin-top: -28px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: -25px;
+}
+.boton-votar button{
+    background-color: #0BC466;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    padding: 25px 0;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    
+
+}
+
+@media (min-width: 981px) {
+    .boton-votar{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+ }
+.boton-votar p{
+    margin: 0;
+}
+@media (max-width: 1280px) {
+    .card{
+        zoom: 0.9;
+    }
+ }
+ button{
+     cursor: pointer;
+ }
+ button:focus{
+     outline: none;
+ }
+ .home-votacion p{
+     color: #7D7D81;
+     font-size: 2rem;
+ }
+ .home-votacion p span{
+     color: black;
+     font-weight: 900;
+ }
+.swal-voto-realizado h2{
+    color: #0BC466;
+    font-size: 30px;
+    font-weight: 700;
+}
+.swal-voto-realizado #swal2-content{
+    font-size: 20px;
+    color: black;
+}
+.swal-voto-realizado{
+    width: 30%;
+    height: 30%;
+    zoom: 1;
+}
+.vota-finalizado{
+    background-color: #E2E2E2;
+    color: #7D7D81;
+    text-align: center;
+}
+.vota-finalizado p{
+    padding: 2rem 0;
+    margin: 0;
+    font-size: 23px;
+    font-weight: 600;
+}
+@media (min-width: 981px) {
+    .vota-finalizado{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+ }
+ .left-result{
+     background-color: #F7F7F7;
+     padding-top: 2rem;
+     padding-bottom: 4rem;
+ }
+ /*Resultado*/
+ .ganador {
+    border-radius: 50%;
+    background-image: url(../img/SEGUNDAJOVEN.png);
+    width: 20rem;
+    height: 20rem;
+    background-position: -12rem 0rem;
+    margin: 0 auto;
+    background-size: 48rem;
+    background-repeat: no-repeat;
+    margin-top: 4rem;
+     
+ }
+ .logo-result {
+     text-align: right;
+ }
+ .logo-result img{
+     width: 10rem;
+ }
+ .left-result p:first-of-type{
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: -3rem;
+ }
+ .ganador-style{
+    color: #0BC466;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+ }
+ .left-result p:last-of-type{
+    color: #0BC466;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: -4rem;
+ }
+ .logo-result.desktop{
+     display: none;
+ }
+ .right-result h1{
+     text-align: center;
+ }
+ .card-list{
+     border: 1px solid #E7E7E8;
+     display: grid;
+     grid-template-columns: 3fr 1fr;
+     align-items: center;
+     border-radius: 8px;
+     margin-bottom: 1rem;
+ }
+ 
+ .grid-left-list{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     align-items: center;
+     border-right: 1px solid #E7E7E8;
+
+ }
+ @media (min-width: 500px) {
+    .grid-left-list{
+        grid-template-columns: 1fr 3fr;
+    }
+  }
+ @media (min-width: 768px) {
+    .grid-left-list{
+        grid-template-columns: 1fr 5fr;
+    }
+  }
+  @media (min-width: 1025px) {
+    .grid-left-list{
+        grid-template-columns: 1fr 4fr;
+    }
+  }
+ .grid-grid-left-list{
+    border-radius: 50%;
+    
+    width: 7rem;
+    height: 7rem;
+    
+    margin: auto;
+    
+    background-repeat: no-repeat;
+ }
+ .grid-grid-left-list.persona1{
+    background-image: url(../img/IMAGENPRIMERJOVEN.png);
+    background-position: -1rem -1rem;
+    background-size: 10rem;
+ }
+ .grid-grid-left-list.persona2{
+    background-image: url(../img/CUARTAJOVEN.png);
+    background-position: -.6rem -1rem;
+    background-size: 8rem;
+ }
+ .grid-grid-right-list p:first-of-type{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: -25px;
+ }
+ .grid-grid-right-list p:last-of-type{
+     color: #7D7D81;
+ }
+ .grid-right-list{
+    text-align: center;
+
+ }
+ .grid-right-list p:first-of-type{
+    margin: 0;
+    margin-bottom: -30px;
+    font-size: 30px;
+    font-weight: 900;
+ }
+ .grid-right-list p:last-of-type{
+     font-size: 12px;
+ }
+ @media (min-width: 1025px) {
+    .logo-result.desktop{
+        display: block;
+        margin-top: 4rem;
+    }
+    .logo-result.mobile{
+        display: none;
+    }
+     .parent-result{
+         display: grid;
+         grid-template-columns: 1fr 2fr;
+         height: 100vh;
+     }
+     .content-ganador{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         height: 100vh;
+     }
+     .left-result{
+         padding-top: 0;
+         padding-bottom: 0;
+     }
+     .ganador{
+        width: 25rem;
+        height: 25rem;
+        background-position: -10rem 0;
+     }
+     .ganador-style{
+         font-size: 5rem;
+         margin: 2rem 0;
+     }
+     .left-result p:last-of-type{
+         font-size: 3.5rem;
+     }
+     .right-result{
+         padding: 0 10rem;
+     }.list-result{
+         overflow: scroll;
+         height: 60vh;
+     }
+     .right-result h1{
+         text-align: left;
+     }
+  }
