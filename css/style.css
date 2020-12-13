@@ -317,6 +317,7 @@ small a{
     zoom: 1;
 }
 .vota-finalizado{
+    display: none;
     background-color: #E2E2E2;
     color: #7D7D81;
     text-align: center;
