@@ -272,12 +272,15 @@ small a{
     
 
 }
-
+.boton-votar{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 @media (min-width: 981px) {
     .boton-votar{
         position: absolute;
-        bottom: 0;
-        width: 100%;
+        
     }
  }
 .boton-votar p{
@@ -321,6 +324,9 @@ small a{
     background-color: #E2E2E2;
     color: #7D7D81;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 .vota-finalizado p{
     padding: 2rem 0;
@@ -331,8 +337,7 @@ small a{
 @media (min-width: 981px) {
     .vota-finalizado{
         position: absolute;
-        bottom: 0;
-        width: 100%;
+        
     }
  }
  .left-result{

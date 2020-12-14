@@ -1,6 +1,7 @@
 let inputDni = document.querySelector('.dni input');
 let log = document.getElementById('log');
 let submit = document.querySelector('.btn');
+const validarNumero = /^\d{8}$/;
 if(log){
     log.innerHTML = 'Ingrese su documento de identidad';
 }
@@ -25,6 +26,12 @@ if(inputDni){
             submit.disabled = false;
             submit.style.cursor = "pointer";
 
+        }
+        if(!validarNumero.test(e.target.value)){
+            inputDni.style.padding = "25px 20px";
+            submit.style.backgroundColor = "#BABABC";
+            submit.disabled = true;
+            submit.style.cursor = "initial";
         }
     }
 }
