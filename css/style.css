@@ -214,6 +214,11 @@ small a{
     min-width: 22rem;
     background-color: white;
 }
+@media (max-width: 539px) {
+    .card{
+        width: 30rem;
+    }
+ }
 .person{
     border-radius: 12px 12px 0px 0px;
     height: 38vh;
@@ -241,6 +246,21 @@ small a{
     background-image: url(../img/CUARTAJOVEN.png);
     background-position: -9rem -6rem;
     background-size: 37rem;
+}
+@media (max-width: 539px) {
+    .card_1 .person{
+        background-position: -14rem -6rem;
+    }
+    .card_2 .person{
+        background-position: -11rem 0rem;
+    }
+    .card_3 .person{
+        background-position: -3rem 0rem;
+    }
+    .card_4 .person{
+        background-position: -4rem -6rem;
+    }
+       
 }
 .card button{
     background-color: white;
@@ -505,3 +525,7 @@ small a{
          text-align: left;
      }
   }
+button.swal2-close:focus{
+    outline: none;
+    box-shadow: none;
+}

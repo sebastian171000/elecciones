@@ -48,16 +48,20 @@ if(votoFinalizado){
 
 for (let index = 0; index < buttonCard.length; index++) {
     const button = buttonCard[index];
-    button.addEventListener('click', () => {
+    button.parentNode.parentNode.addEventListener('click', () => {
         greenButton.style.display = 'block';
         for (let index = 0; index < buttonCard.length; index++) {
             buttonCard[index].parentNode.parentNode.style.borderColor = "#F3F3F3";
             buttonCard[index].style.borderColor = "#7D7D81";
+            buttonCard[index].style.color = "#7D7D81";
+            buttonCard[index].innerHTML = 'SELECCIONAR';
             
         }
         const padreSuperior = button.parentNode.parentNode;
         button.style.borderColor = "#0BC466";
         padreSuperior.style.borderColor = "#0BC466";
+        button.innerHTML = 'SELECCIONADO';
+        buttonCard[index].style.color = "#0BC466";
     });
     
 }
